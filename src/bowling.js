@@ -14,9 +14,10 @@ Bowling.prototype.rollBall = function() {
   { this.frameTurn = 2, this.framesLeft = this.framesLeft = this.framesLeft - 1}
 };
 
-Bowling.prototype.numberOfPinsHit = function() {
-  var turn = Math.floor((Math.random()*10) + 0);
+Bowling.prototype.numberOfPinsHit = function(turn) {
+  var turn = turn || Math.floor((Math.random()*10) + 0);
   this.pins = this.pins - turn
+  this.totalScore = this.totalScore + turn
 };
 
 Bowling.prototype.checkAllPinsHit = function () {

@@ -47,4 +47,9 @@ it ('should have a total score when initialised', function(){
   expect(bowling.totalScore).toEqual(0)
 });
 
+it ('should add to total score after each turn', function(){
+  bowling.numberOfPinsHit(9)
+  expect(bowling.totalScore).toBeGreaterThan(0)
+});
+
 });
