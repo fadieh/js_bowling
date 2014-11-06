@@ -8,4 +8,8 @@ it ('should initialise with 10 pins', function(){
     expect(bowling.pins).toEqual(10)
 });
 
+it ('should have 10 frames', function(){
+    expect(bowling.framesLeft).toEqual(10)
+});
+
 });
