@@ -5,3 +5,7 @@ function Bowling() {
   this.frameTurn = 2
 
 };
+
+Bowling.prototype.rollBall = function() {
+  this.frameTurn = this.frameTurn - 1
+};

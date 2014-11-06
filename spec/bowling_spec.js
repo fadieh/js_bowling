@@ -16,4 +16,9 @@ it ('each frame should have 2 turns', function(){
     expect(bowling.frameTurn).toEqual(2)
 });
 
+it ('should be able to take a shot and move to the next turn', function(){
+   bowling.rollBall()
+   expect(bowling.frameTurn).toEqual(1)
+});
+
 });
