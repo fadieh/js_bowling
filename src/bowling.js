@@ -7,5 +7,8 @@ function Bowling() {
 };
 
 Bowling.prototype.rollBall = function() {
-  this.frameTurn = this.frameTurn - 1
+  if (this.frameTurn > 0)
+  { this.frameTurn = this.frameTurn - 1 }
+  if (this.frameTurn === 0)
+  { this.frameTurn = 2, this.framesLeft = 9}
 };

@@ -19,6 +19,15 @@ it ('each frame should have 2 turns', function(){
 it ('should be able to take a shot and move to the next turn', function(){
    bowling.rollBall()
    expect(bowling.frameTurn).toEqual(1)
+   expect(bowling.framesLeft).toEqual(10)
+});
+
+it ('should move to next frame, once 2 turns have been taken', function(){
+  bowling.frameTurn = 1
+  bowling.rollBall()
+  expect(bowling.framesLeft).toEqual(9)
+  expect(bowling.frameTurn).toEqual(2)
+
 });
 
 });
