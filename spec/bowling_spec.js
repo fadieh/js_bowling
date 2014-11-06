@@ -27,7 +27,12 @@ it ('should move to next frame, once 2 turns have been taken', function(){
   bowling.rollBall()
   expect(bowling.framesLeft).toEqual(9)
   expect(bowling.frameTurn).toEqual(2)
+});
 
+it ('a bowl should generate a number between 0-10', function(){
+  bowling.numberOfPinsHit()
+  expect(bowling.pins).toBeGreaterThan(-1)
+  expect(bowling.pins).toBeLessThan(11)
 });
 
 });
