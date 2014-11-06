@@ -35,4 +35,12 @@ it ('a bowl should generate a number between 0-10', function(){
   expect(bowling.pins).toBeLessThan(11)
 });
 
+it ('pins left should not be below zero and move onto next frame', function(){
+  bowling.pins = 0
+  bowling.frameTurn = 1
+  bowling.framesLeft = 10
+  bowling.checkAllPinsHit()
+  expect(bowling.framesLeft).toEqual(9)
+});
+
 });

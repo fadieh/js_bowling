@@ -16,4 +16,10 @@ Bowling.prototype.rollBall = function() {
 Bowling.prototype.numberOfPinsHit = function() {
   var turn = Math.floor((Math.random()*10) + 0);
   this.pins = this.pins - turn
+  this.checkAllPinsHit()
+};
+
+Bowling.prototype.checkAllPinsHit = function () {
+  if ((this.pins == 0) && (this.frameTurn == 1))
+  { this.framesLeft = 9 }
 };
