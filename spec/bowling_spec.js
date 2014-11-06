@@ -43,4 +43,8 @@ it ('pins left should not be below zero and move onto next frame', function(){
   expect(bowling.framesLeft).toEqual(9)
 });
 
+it ('should have a total score when initialised', function(){
+  expect(bowling.totalScore).toEqual(0)
+});
+
 });
