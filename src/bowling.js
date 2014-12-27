@@ -4,6 +4,7 @@ function Bowling() {
   this.framesLeft = 10
   this.frameTurn = 2
   this.totalScore = 0
+  this.lastScore = 0
 
 };
 
@@ -13,6 +14,7 @@ Bowling.prototype.bowl = function(turn) {
   this.updateTotalScore(turn)
   this.checkAllPinsHit()
   this.nextTurn()
+  this.lastScore = turn
 };
 
 Bowling.prototype.nextTurn = function() {

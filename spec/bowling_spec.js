@@ -58,4 +58,15 @@ it ('should add to total score after each turn', function(){
   expect(bowling.totalScore).toBeGreaterThan(0)
 });
 
+it ('should take a record of the previous shot', function(){
+  bowling.bowl(9)
+  expect(bowling.lastScore).toEqual(9)
+  bowling.bowl(7)
+  expect(bowling.lastScore).toEqual(7)
+});
+
+// it ('should account for a strike', function(){
+
+// });
+
 });
