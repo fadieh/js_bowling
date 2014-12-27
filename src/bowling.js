@@ -7,24 +7,25 @@ function Bowling() {
 
 };
 
-Bowling.prototype.rollBall = function() {
+Bowling.prototype.bowl = function(turn) {
+  var turn = turn || Math.floor((Math.random()*10) + 0);
+  this.updatePinsLeft(turn)
+  this.updateTotalScore(turn)
+  this.checkAllPinsHit()
+  this.nextTurn()
+};
+
+Bowling.prototype.nextTurn = function() {
   if (this.frameTurn > 0)
   { this.nextFrameTurn() }
   if (this.frameTurn === 0)
   { this.nextFrame() }
 };
 
-Bowling.prototype.numberOfPinsHit = function(turn) {
-  var turn = turn || Math.floor((Math.random()*10) + 0);
-  this.updatePinsLeft(turn)
-  this.updateTotalScore(turn)
-  this.checkAllPinsHit()
-};
-
 Bowling.prototype.checkAllPinsHit = function () {
   if ((this.pins == 0) && (this.frameTurn == 1))
   { this.nextFrame() }
-  else if (this.pins <- 0)
+  else if (this.pins <= 0)
   { this.revertToZero() }
 };
 
