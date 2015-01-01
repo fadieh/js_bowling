@@ -3,13 +3,49 @@ function Bowling() {
   this.score = [[],[],[],[],[],[],[],[],[],[]]
   this.frameNumber = 1
   this.frameTurn = 1
+  this.pinsRemaining = 10
 
 };
 
 Bowling.prototype.bowl = function(turn) {
-  this.score[this.frameNumber - 1][this.frameTurn - 1] = turn || Math.floor((Math.random()*10) + 0);
+  pinsStruck = Math.floor((Math.random()*this.pinsRemaining) + 0);
+  this.pinsRemaining = this.pinsRemaining - pinsStruck;
+  this.score[this.frameNumber - 1][this.frameTurn - 1] = turn || pinsStruck;
+  if ( this.frameTurn === 2)
+  { this.frameNumber = this.frameNumber + 1 }
+  else 
+  { this.frameTurn = 2}
 };
 
+Bowling.prototype.nextFrame = function() {
+  this.frameNumber = this.frameNumber + 1
+};
+
+
+
+
+
+
+
+
+
+
+
+
+// Bowling.prototype.nextTurn = function() {
+//   if (this.frameTurn === 2)
+//   { this.nextFrame() }
+//   if (this.frameTurn === 1)
+//   { this.nextFrameTurn() }
+// };
+
+// Bowling.prototype.nextFrame = function() {
+//   this.frameNumber = this.frameNumber + 1;
+// };
+
+// Bowling.prototype.nextFrameTurn = function() {
+//   this.frameTurn = this.frameTurn + 1;
+// };
 
 
 // function Bowling() {

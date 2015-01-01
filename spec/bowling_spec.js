@@ -13,6 +13,21 @@ describe ('Bowling', function() {
     expect(bowling.score[0][0]).toEqual(7)
   });
 
+  // it('should move onto the next frameTurn after 1st bowl in a frame', function(){
+  //   bowling.bowl()
+  //   expect(bowling.frameNumber).toEqual(1)
+  //   expect(bowling.frameTurn).toEqual(2)
+  // });
+
+  // it ('should move onto the frame after 2nd bowl in a frame', function(){
+  //   bowling.bowl()
+  //   expect(bowling.frameNumber).toEqual(1)
+  //   expect(bowling.frameTurn).toEqual(2)
+  //   bowling.bowl()
+  //   expect(bowling.frameNumber).toEqual(2) 
+  //   expect(bowling.frameTurn).toEqual(1)
+  // });
+
 });
 
 
