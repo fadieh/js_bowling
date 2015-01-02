@@ -13,6 +13,10 @@ describe ('Bowling', function() {
     expect(bowling.score[0][0]).toEqual(7)
   });
 
+  it('should have 10 pins remaining at start', function(){
+    expect(bowling.pinsRemaining).toEqual(10)
+  })
+
   // it('should move onto the next frameTurn after 1st bowl in a frame', function(){
   //   bowling.bowl()
   //   expect(bowling.frameNumber).toEqual(1)
