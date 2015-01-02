@@ -34,6 +34,18 @@ describe ('Bowling', function() {
     expect(bowling.pinsRemaining).toEqual(3)
   });
 
+  it('pins remaining should revert at next frame', function(){
+    bowling.bowl()
+    bowling.bowl()
+    expect(bowling.pinsRemaining).toEqual(10)
+  });
+
+  it('should have a total score', function(){
+    bowling.bowl(6)
+    bowling.bowl(3)
+    expect(bowling.totalScore).toEqual(9)
+  });
+
   // it('should move onto the next frameTurn after 1st bowl in a frame', function(){
   //   bowling.bowl()
   //   expect(bowling.frameNumber).toEqual(1)
