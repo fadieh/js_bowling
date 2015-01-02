@@ -6,7 +6,7 @@ describe ('Bowling', function() {
 
   it('score should contain 10 frames', function(){
     expect(bowling.score.length).toEqual(10)
-  })
+  });
 
   it('should randomly generate a number for a bowl and write to the score array', function(){
     bowling.bowl(7)
@@ -15,7 +15,19 @@ describe ('Bowling', function() {
 
   it('should have 10 pins remaining at start', function(){
     expect(bowling.pinsRemaining).toEqual(10)
-  })
+  });
+
+  it('should move onto next frameTurn after bowl', function(){
+    bowling.bowl()
+    expect(bowling.frameTurn).toEqual(2)
+  });
+
+  it('should move onto next frameNumber after 2 bowls', function(){
+    bowling.bowl()
+    bowling.bowl()
+    expect(bowling.frameNumber).toEqual(2)
+    expect(bowling.frameTurn).toEqual(1)
+  });
 
   // it('should move onto the next frameTurn after 1st bowl in a frame', function(){
   //   bowling.bowl()
