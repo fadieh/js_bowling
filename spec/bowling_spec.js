@@ -29,6 +29,11 @@ describe ('Bowling', function() {
     expect(bowling.frameTurn).toEqual(1)
   });
 
+  it('should have 3 pins remaining after bowling 7', function(){
+    bowling.bowl(7)
+    expect(bowling.pinsRemaining).toEqual(3)
+  });
+
   // it('should move onto the next frameTurn after 1st bowl in a frame', function(){
   //   bowling.bowl()
   //   expect(bowling.frameNumber).toEqual(1)

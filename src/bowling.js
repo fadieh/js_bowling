@@ -8,7 +8,7 @@ function Bowling() {
 };
 
 Bowling.prototype.bowl = function(turn) {
-  pinsStruck = Math.floor((Math.random()*this.pinsRemaining) + 0);
+  pinsStruck = turn || Math.floor((Math.random()*this.pinsRemaining) + 0);
   this.pinsRemaining = this.pinsRemaining - pinsStruck;
   this.score[this.frameNumber - 1][this.frameTurn - 1] = turn || pinsStruck;
   this.frameTurn = this.frameTurn + 1;
