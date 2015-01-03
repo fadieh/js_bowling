@@ -43,8 +43,17 @@ describe ('Bowling', function() {
   it('should have a total score', function(){
     bowling.bowl(6)
     bowling.bowl(3)
-    expect(bowling.totalScore).toEqual(9)
+    bowling.bowl(9)
+    expect(bowling.totalScore).toEqual(18)
   });
+
+  it('should acknowledge a strike', function(){
+    bowling.bowl(10)
+    expect(bowling.frameNumber).toEqual(2)
+    expect(bowling.frameTurn).toEqual(1)
+  });
+
+
 
   // it('should move onto the next frameTurn after 1st bowl in a frame', function(){
   //   bowling.bowl()
