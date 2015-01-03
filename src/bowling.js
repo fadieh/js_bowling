@@ -18,7 +18,6 @@ Bowling.prototype.bowl = function(turn) {
   { this.nextFrame() }
   if (this.pinsRemaining === 0 && this.frameTurn === 2)
   { this.nextFrame() }
-  this.calculateStrike()
 };
 
 Bowling.prototype.nextFrame = function() {
@@ -27,8 +26,32 @@ Bowling.prototype.nextFrame = function() {
   this.pinsRemaining = 10;
 };
 
-Bowling.prototype.calculateStrike = function() {
-  if (this.pinsRemaining === 0 && this.frameTurn === 2)
-  { 
-  this.score[this.frameNumber - 1][this.frameTurn - 1] =  }
+Bowling.prototype.applyBonus = function() {
+  if (this.score[0][0] === 10) {
+    this.score[0][0] = this.score[0][0] + this.score[1][0] + this.score[1][1]
+  }
+  if (this.score[1][0] === 10) {
+    this.score[1][0] = this.score[1][0] + this.score[2][0] + this.score[2][1]
+  }
+  if (this.score[2][0] === 10) {
+    this.score[2][0] = this.score[2][0] + this.score[3][0] + this.score[3][1]
+  }
+  if (this.score[3][0] === 10) {
+    this.score[3][0] = this.score[3][0] + this.score[4][0] + this.score[4][1]
+  }
+  if (this.score[4][0] === 10) {
+    this.score[4][0] = this.score[4][0] + this.score[5][0] + this.score[5][1]
+  }
+  if (this.score[5][0] === 10) {
+    this.score[5][0] = this.score[5][0] + this.score[6][0] + this.score[6][1]
+  }
+  if (this.score[6][0] === 10) {
+    this.score[6][0] = this.score[6][0] + this.score[7][0] + this.score[7][1]
+  }
+  if (this.score[7][0] === 10) {
+    this.score[7][0] = this.score[7][0] + this.score[8][0] + this.score[8][1]
+  }
+  if (this.score[8][0] === 10) {
+    this.score[8][0] = this.score[8][0] + this.score[9][0] + this.score[9][1]
+  }
 };

@@ -57,6 +57,7 @@ describe ('Bowling', function() {
     bowling.bowl(10)
     bowling.bowl(7)
     bowling.bowl(2)
+    bowling.applyBonus()
     expect(bowling.score[0][0]).toEqual(19)
   });
 
