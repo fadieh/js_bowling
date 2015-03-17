@@ -61,11 +61,44 @@ describe ('Bowling', function() {
     bowling.bowl(5)
     bowling.bowl(4)
     expect(bowling.frameScore[0]).toEqual(9)
+    bowling.bowl(1)
+    bowling.bowl(1)
+    expect(bowling.frameScore[1]).toEqual(2)
   });
 
-  xit('should acknowledge a strike', function(){
+  it('frame total should not go over 10', function(){
+    bowling.bowl()
+    bowling.bowl()
+    expect(bowling.frameScore[0]).toBeLessThan(10)
+    bowling.bowl()
+    bowling.bowl()
+    expect(bowling.frameScore[1]).toBeLessThan(10)
+    bowling.bowl()
+    bowling.bowl()
+    expect(bowling.frameScore[2]).toBeLessThan(10)
+    bowling.bowl()
+    bowling.bowl()
+    expect(bowling.frameScore[3]).toBeLessThan(10)
+    bowling.bowl()
+    bowling.bowl()
+    expect(bowling.frameScore[4]).toBeLessThan(10)
+    bowling.bowl()
+    bowling.bowl()
+    expect(bowling.frameScore[5]).toBeLessThan(10)
+    bowling.bowl()
+    bowling.bowl()
+    expect(bowling.frameScore[6]).toBeLessThan(10)
+    bowling.bowl()
+    bowling.bowl()
+    expect(bowling.frameScore[7]).toBeLessThan(10)
+    bowling.bowl()
+    bowling.bowl()
+    expect(bowling.frameScore[8]).toBeLessThan(10)
+  });
+
+  it('should acknowledge a strike', function(){
     bowling.bowl(10)
-    expect(bowling.frameNumber).toEqual(2)
+    expect(bowling.frame).toEqual(2)
     expect(bowling.frameTurn).toEqual(1)
   });
 
@@ -73,7 +106,6 @@ describe ('Bowling', function() {
     bowling.bowl(10)
     bowling.bowl(7)
     bowling.bowl(2)
-    bowling.applyBonus()
     expect(bowling.score[0]).toEqual(19)
   });
 
