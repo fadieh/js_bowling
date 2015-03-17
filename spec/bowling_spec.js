@@ -57,6 +57,12 @@ describe ('Bowling', function() {
     expect(bowling.totalScore).toEqual(18)
   });
 
+  it('should have a frame total score', function(){
+    bowling.bowl(5)
+    bowling.bowl(4)
+    expect(bowling.frameScore[0]).toEqual(9)
+  });
+
   xit('should acknowledge a strike', function(){
     bowling.bowl(10)
     expect(bowling.frameNumber).toEqual(2)
@@ -68,7 +74,7 @@ describe ('Bowling', function() {
     bowling.bowl(7)
     bowling.bowl(2)
     bowling.applyBonus()
-    expect(bowling.score[0][0]).toEqual(19)
+    expect(bowling.score[0]).toEqual(19)
   });
 
   xit('should calculate a spare score', function(){
