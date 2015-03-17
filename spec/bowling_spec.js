@@ -37,25 +37,20 @@ describe ('Bowling', function() {
     expect(bowling.pinsRemaining).toEqual(8)
   });
 
-  xit('should move onto next frameNumber after 2 bowls', function(){
+  it('should move onto next frameNumber after 2 bowls', function(){
     bowling.bowl()
     bowling.bowl()
     expect(bowling.frame).toEqual(2)
     expect(bowling.frameTurn).toEqual(1)
   });
 
-  xit('should have 3 pins remaining after bowling 7', function(){
-    bowling.bowl(7)
-    expect(bowling.pinsRemaining).toEqual(3)
-  });
-
-  xit('pins remaining should revert at next frame', function(){
+  it('pins remaining should revert at next frame', function(){
     bowling.bowl()
     bowling.bowl()
     expect(bowling.pinsRemaining).toEqual(10)
   });
 
-  xit('should have a total score', function(){
+  it('should have a total score', function(){
     bowling.bowl(6)
     bowling.bowl(3)
     bowling.bowl(9)
